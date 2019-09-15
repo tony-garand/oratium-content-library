@@ -1,0 +1,33 @@
+:root {
+  --primary: #FF5904;
+  --primary-dark: rgba(255, 88, 5, 1);
+  --primary-70: rgba(255, 88, 5, 0.7);
+  --primary-50: rgba(255, 88, 5, 0.5);
+  --primary-30: rgba(255, 88, 5, 0.3);
+  --primary-10: rgba(255, 88, 5, 0.1);
+  --logo: #430051;
+  --sidebar-icon: #FF5904;
+}
+
+.bg-grad-sidebar {
+  background-color: #E6E6E6;
+  background-image: none;
+  color: #242424 !important;
+}
+
+.text-white {
+  color: #242424 !important;
+}
+
+.h-header {
+  background-color: #E6E6E6;
+  background-image: none;
+}
+
+.sidebar-label {
+    color: #242424;
+}
+
+.admin-items {
+  color: #242424 !important;
+}

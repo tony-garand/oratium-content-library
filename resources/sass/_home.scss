@@ -1,0 +1,52 @@
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  float: left;
+}
+
+
+.content {
+  width: auto;
+  height: 100vh;
+  float: left;
+}
+
+
+.welcome-message {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 999;
+  display:none;
+}
+
+.inner-message {
+  position: relative;
+  margin: 15% 20%;
+  height: 40vh;
+  width: 60vw;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  border: 1px solid #EAEAEA;
+  z-index: 999;
+  -webkit-box-shadow: 0px 10px 5px 0px rgba(219,219,219,1);
+  -moz-box-shadow: 0px 10px 5px 0px rgba(219,219,219,1);
+  box-shadow: 0px 10px 5px 0px rgba(219,219,219,1);
+}
+
+.inner-message-text {
+  text-align: center;
+  margin: auto;
+  padding: 5%;
+  padding-bottom: 0px;
+  font-family:$primary-font;
+  font-size: 16px;
+}
+
+#close-message{
+  bottom: -15;
+  position: inherit;
+  margin: auto;
+  text-align: center;
+}

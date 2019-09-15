@@ -1,0 +1,100 @@
+@font-face {
+    font-family: OptimusPrinceps;
+    src: url('/fonts/OptimusPrinceps.tff');
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('/fonts/AvenirLTStd-Medium.otf');
+}
+
+@font-face {
+    font-family: 'Avenir Black';
+    src: url('/fonts/AvenirLTStd-Black.otf');
+}
+
+@font-face {
+    font-family: 'Avenir Heavy';
+    src: url('/fonts/AvenirLTStd-Heavy.otf');
+}
+
+a p {
+  font-family:$primary-font;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none !important;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.nav-item a{
+  font-family:$primary-font-black !important;
+  font-size: 16px;
+  text-decoration: none;
+  padding-left: 50px;
+}
+
+p.joke-excerpt,
+p.article-excerpt,
+p.lift-excerpt {
+  font-family:$primary-font;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+div.read-more {
+  font-size: 14px;
+  font-family: $primary-font-heavy;
+  color: $primary-color;
+}
+
+
+h5 {
+  font-family:$primary-font-black;
+  font-size: 14px;
+}
+
+
+h3 {
+  font-family:$primary-font-heavy;
+  color: $font-color-blue;
+  min-height: 50px;
+}
+
+h3.article-title,
+h3.lift-title {
+  margin-bottom: 0px;
+}
+
+p.article-excerpt,
+p.lift-excerpt {
+  margin-top: 10px;
+  padding-bottom: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.winston-quote h3 {
+  quotes: "“" "”" "‘" "’";
+}
+.winston-quote h3:before {
+    content: open-quote;
+}
+.winston-quote h3:after {
+    content: close-quote;
+}
+
+
+p.quote-content {
+  quotes: "“" "”" "‘" "’";
+}
+p.quote-content:before {
+    content: open-quote;
+}
+p.quote-content:after {
+    content: close-quote;
+}

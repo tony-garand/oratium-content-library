@@ -1,0 +1,55 @@
+// Fonts
+
+$primary-font: 'Avenir';
+$primary-font-heavy: 'Avenir Heavy';
+$primary-font-black: 'Avenir Black';
+
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: "Nunito", sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Colors
+$primary-button-color: #FF7D3B;
+
+$primary-color:#FF5904;
+$secondary-color: #678496;
+$grey: #E6E6E6;
+$font-color-black:#242424;
+$font-color-blue:#529FD8;
+
+
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66D9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+
+
+$soft-padding: 20px;
+
+
+/* Animations / Transitions / Effects
+-----------------------------------------------------------------------*/
+
+$transitions-primary: all 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
+$shadow-depth-1: 0 2px 4px rgba(0,0,0,0.10);
+$shadow-depth-2: 0 10px 20px rgba(0,0,0,0.10);
+$shadow-depth-3: 0 10px 20px rgba(0,0,0,0.10), 0 20px 40px rgba(0,0,0,0.15);
+$shadow-depth-4: 0 10px 30px rgba(0,0,0,0.10), 0 30px 60px rgba(0,0,0,0.15);
+$shadow-depth-5: 0 20px 40px rgba(0,0,0,0.10), 0 40px 80px rgba(0,0,0,0.15);
+
+/* Responsive Break Points
+-----------------------------------------------------------------------*/
+
+$responsive-large: 77.5rem; /* (1240px) */
+$responsive-medium: 64.063rem; /* (1140px) */
+$responsive-small: 40.06rem; /* (1140px) */
