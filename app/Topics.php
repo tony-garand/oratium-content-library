@@ -44,4 +44,9 @@ class Topics extends Model implements ViewableContract
       return $this->BelongsToMany(Visuals::class);
     }
 
+    public function videos()
+    {
+      return $this->BelongsToMany(videos::class);
+    }
+
 }

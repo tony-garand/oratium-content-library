@@ -18,7 +18,10 @@
               <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#visuals" role="tab"><i class="far fa-images"></i>Visuals <span class="nav-number">{{ $topics->visuals->count() }}</span></a>
               </li>
-              <li class="nav-item" style="margin-top: 60px;">
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#videos" role="tab"><i class="fas fa-video"></i>Videos <span class="nav-number">{{ $topics->videos->count() }}</span></a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#articles" role="tab"><i class="far fa-newspaper"></i>Articles <span class="nav-number">{{ $topics->articles->count() }}</span></a>
               </li>
             </ul>
@@ -67,7 +70,7 @@
           <h5>Related Topics</h5>
         @foreach($lift->topics as $relatedTopic)
           <a href="{{ '/topics/' . $relatedTopic->slug }}" class=""><p>{{ $relatedTopic->topic }}
-            <span class="resource">{{ $relatedTopic->articles->count() + $relatedTopic->lifts->count() + $relatedTopic->quotes->count() + $relatedTopic->visuals->count() }}</span>
+            <span class="resource">{{ $relatedTopic->articles->count() + $relatedTopic->lifts->count() + $relatedTopic->quotes->count() + $relatedTopic->visuals->count() + $relatedTopic->videos->count() }}</span>
           </p></a>
         @endforeach
       </div>
@@ -102,7 +105,7 @@
     @endforeach
   </div>
 
-  <!-- Visual -->
+  <!-- Visuals -->
   <div lass="tab-pane visuals" id="visuals" role="tabpanel">
     @foreach($topics->visuals as $visual)
     <div class="visual card">
@@ -133,6 +136,34 @@
     @endforeach
   </div>
 
+  <!-- videos -->
+  <div lass="tab-pane videos" id="videos" role="tabpanel">
+    @foreach($topics->videos as $video)
+    <div class="video card">
+      <div class="video-wrapper">
+        <div class="thumbnail" style="background-image: url(/images/{{ $video->thumbnail }});"></div>
+        <div class="previous"><i class="material-icons">arrow_back</i></div>
+        <div class="next"><i class="material-icons">arrow_forward</i></div>
+        @if(empty($video->description))
+        @else
+        <div class="video-description">
+          {!! $video->video !!}
+          <h3 class="video-description-text">{{ $video->description }}</h3>
+        </div>
+        @endif
+      </div>
+      <div class="related-topics">
+        <h5>Related Topics</h5>
+        @foreach($video->topics as $relatedTopic)
+        <a href="{{ '/topics/' . $relatedTopic->slug }}" class=""><p>{{ $relatedTopic->topic }}
+          <span class="resource">{{ $relatedTopic->articles->count() + $relatedTopic->lifts->count() + $relatedTopic->quotes->count() + $relatedTopic->videos->count() }}</span>
+        </p></a>
+        @endforeach
+      </div>
+    </div>
+    @endforeach
+  </div>
+
   <!-- Articles -->
   <div class="tab-pane articles" id="articles" role="tabpanel">
   @foreach($topics->articles as $article)
@@ -155,7 +186,7 @@
           @foreach($article->topics as $relatedTopic)
           <a href="{{ '/topics/' . $relatedTopic->slug }}" class="">
             <p>{{ $relatedTopic->topic }}
-            <span class="resource">{{ $relatedTopic->articles->count() + $relatedTopic->lifts->count() + $relatedTopic->quotes->count() + $relatedTopic->visuals->count() }}</span>
+            <span class="resource">{{ $relatedTopic->articles->count() + $relatedTopic->lifts->count() + $relatedTopic->quotes->count() + $relatedTopic->visuals->count() + $relatedTopic->videos->count() }}</span>
             </p></a>
           @endforeach
         </div>

@@ -157,6 +157,8 @@ aside.el-aside ul li a .nav-number {
 .articles,
 .lifts,
 .quotes,
+.vidoes,
+#videos,
 #visuals {
   display: none;
 }
@@ -164,6 +166,8 @@ aside.el-aside ul li a .nav-number {
 .articles.active,
 .lifts.active,
 .quotes.active,
+.vidoes.active,
+#videos.active,
 #visuals.active {
   display: block;
 }
@@ -324,6 +328,54 @@ aside.el-aside ul li a .nav-number {
   margin-left: 10px;
 }
 
+.card.selected .video-wrapper {
+  width: 74.3% !important;
+}
+
+@media screen and (max-width: 64.063rem) {
+  .card.selected .video-wrapper {
+    width: 99% !important;
+  }
+}
+
+.card.selected .video-wrapper .previous,
+.card.selected .video-wrapper .next {
+  border-radius: 50%;
+  background-color: #FF5904;
+  border-color: #FF5904;
+  color: #FF5904;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  display: block;
+  margin-top: 120px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card.selected .video-wrapper .previous i,
+.card.selected .video-wrapper .next i {
+  color: white;
+  padding: 8px;
+}
+
+.card.selected .video-wrapper .previous i:hover,
+.card.selected .video-wrapper .next i:hover {
+  cursor: pointer;
+}
+
+.card.selected .video-wrapper .previous:hover,
+.card.selected .video-wrapper .next:hover {
+  cursor: pointer;
+}
+
+.card.selected .video-wrapper .next {
+  margin-right: 10px;
+}
+
+.card.selected .video-wrapper .previous {
+  margin-left: 10px;
+}
+
 .card.selected .quote-wrapper {
   height: 350px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -419,6 +471,7 @@ aside.el-aside ul li a .nav-number {
 .article-wrapper,
 .lift-wrapper,
 .quote-wrapper,
+.video-wrapper,
 .visual-wrapper {
   height: 100%;
 }
@@ -426,6 +479,7 @@ aside.el-aside ul li a .nav-number {
 .article-wrapper .read-more,
 .lift-wrapper .read-more,
 .quote-wrapper .read-more,
+.video-wrapper .read-more,
 .visual-wrapper .read-more {
   position: absolute;
   bottom: 12px;
@@ -434,6 +488,7 @@ aside.el-aside ul li a .nav-number {
 .article-wrapper .quote-content,
 .lift-wrapper .quote-content,
 .quote-wrapper .quote-content,
+.video-wrapper .quote-content,
 .visual-wrapper .quote-content {
   padding: 12px;
 }
@@ -441,6 +496,7 @@ aside.el-aside ul li a .nav-number {
 .article-wrapper:hover,
 .lift-wrapper:hover,
 .quote-wrapper:hover,
+.video-wrapper:hover,
 .visual-wrapper:hover {
   cursor: pointer;
 }
@@ -482,6 +538,7 @@ h4.quote-author {
 .card.selected .article-wrapper,
 .card.selected .lift-wrapper,
 .card.selected .quote-wrapper,
+.card.selected .video-wrapper,
 .card.selected .visual-wrapper {
   width: 72.3%;
   float: left;
@@ -492,6 +549,7 @@ h4.quote-author {
   .card.selected .article-wrapper,
   .card.selected .lift-wrapper,
   .card.selected .quote-wrapper,
+  .card.selected .video-wrapper,
   .card.selected .visual-wrapper {
     width: 95%;
   }
@@ -501,6 +559,7 @@ h4.quote-author {
 .card.selected .article-wrapper .read-more,
 .card.selected .lift-wrapper .read-more,
 .card.selected .quote-wrapper .read-more,
+.card.selected .video-wrapper .read-more,
 .card.selected .visual-wrapper .read-more {
   display: none;
 }
@@ -514,10 +573,17 @@ h4.quote-author {
 .card.selected .lift-content,
 .card.selected .lift-insight,
 .card.selected .visual-disclaimer,
+.card.selected .video-description,
 .card.selected .visual-description {
   display: block;
   font-family: "Avenir";
   font-size: 14px;
+}
+
+.card.selected .video-description {
+  margin: auto;
+  text-align: center;
+  box-shadow: none;
 }
 
 .card.selected .article-excerpt,
@@ -561,6 +627,7 @@ h4.quote-author {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.card.selected .visual-description .video-description-text,
 .card.selected .visual-description .visual-description-text {
   color: #242424;
   font-family: "Avenir" !important;
@@ -577,6 +644,7 @@ h4.quote-author {
 .card.selected .copy-action {
   display: inline-block;
   float: right;
+  padding: 10px 0;
   font-size: 14px;
   font-family: "Avenir Black";
   color: #242424;
@@ -637,6 +705,7 @@ h4.quote-author {
   float: right;
 }
 
+.video,
 .visual {
   padding: 0;
   width: 23.5%;
@@ -644,11 +713,13 @@ h4.quote-author {
   margin-bottom: 1%;
 }
 
+.video.selected,
 .visual.selected {
   padding-bottom: 20px;
   margin-left: 1%;
 }
 
+.video.selected .image,
 .visual.selected .image {
   height: 500px;
   background-size: contain;
@@ -657,15 +728,22 @@ h4.quote-author {
   background-position: center;
 }
 
+.video.selected .thumbnail,
+.visual.selected .thumbnail {
+  display: none;
+}
+
 .joke-content,
 .article-content,
 .lift-content,
 .lift-insight,
+.video-description,
 .visual-description,
 .visual-disclaimer {
   display: none;
 }
 
+.thumbnail,
 .image {
   background-size: cover;
   background-repeat: no-repeat;
@@ -1194,7 +1272,7 @@ select#order option {
 
 a p {
   font-family: "Avenir";
-  font-size: 14px;
+  font-size: 16px;
 }
 
 a {

@@ -204,6 +204,64 @@ $('body').on('click', '.previous', function (){
   quote.last().addClass('selected').prependTo("#visuals").next().removeClass('selected');
 });
 
+
+//
+// videos
+//
+
+
+
+$(function() {
+  $('.video.card').click( function() {
+    $(this).addClass('selected').siblings().removeClass('selected');
+  });
+});
+
+$('body').on('click', '.video.card', function () {
+    var self = $(this);
+    self.addClass('selected');
+    hide = false;
+
+    $('.back').removeAttr("href");
+    $('.back').on('click', function() {
+       $('.card').removeClass('selected');
+       $('.card').addClass('no-transition');
+       self.siblings().show();
+       if (!$(".card").hasClass('selected')){
+          setTimeout(function (){
+            $('.card').removeClass('no-transition');
+            $('.back').attr("href", '/');
+          }, 200);
+       }
+    });
+    $('.nav-link').on('click', function() {
+       $('.card').removeClass('selected');
+    });
+});
+
+//prepend when clicking other quotes that are not first
+
+$('body').on('click', '.video.card', function (){
+  $('.video.card.selected').prependTo("#videos");
+});
+
+// Previus and Next Buttons
+
+$('body').on('click', '.next', function (){
+  var quote = $('.video.card');
+  quote.next().addClass('selected').prependTo("#videos").prev().removeClass('selected');
+});
+$('body').on("click", function () {
+  $('.video.card').eq(1).removeClass('selected');
+});
+
+$('body').on('click', '.previous', function (){
+  var quote = $('.video.card');
+  quote.last().addClass('selected').prependTo("#videos").next().removeClass('selected');
+});
+
+
+
 //
 //Jokes
 //
@@ -323,3 +381,41 @@ $(document).ready(function () {
   $('div.lift-content a').attr('target','_blank');
   $('div.article-content a').attr('target','_blank');
 });
+
+
+
+// Auto-scaling iframes
+//-----------------------
+
+
+
+// function iframeAutoScale() {
+//
+//   'use strict';
+//
+//   $('iframe').each(function () {
+//     var
+//       parentWidth = $(this).parent().innerWidth(),
+//       ratio = 0.75,	// default ratio (4:3)
+//       width = $(this).attr('width'),
+//       height = $(this).attr('height');
+//
+//     // overwrite default ratio if width and height attributes are not set
+//     if (width !== undefined && height !== undefined) {
+//       ratio = height / width;
+//     }
+//
+//     $(this).attr('width', parentWidth);
+//     $(this).attr('height', parentWidth * ratio);
+//   });
+// }
+//
+// // onload
+// $(document).ready(function () {
+//   iframeAutoScale();
+// });
+//
+// // on window resize
+// $(window).resize(function () {
+//   iframeAutoScale();
+// });
