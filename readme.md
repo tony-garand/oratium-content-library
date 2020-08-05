@@ -3,6 +3,14 @@
 `composer install`
 `php artisan jwt:secret`
 
+create these folders under storage/framework:
+
+`sessions
+`views
+`cache
+
+
+
 ## new database
 `php artisan migrate`
 
