@@ -5,9 +5,9 @@
 
 create these folders under storage/framework:
 
-`sessions
-`views
-`cache
+sessions
+views
+cache
 
 
 
