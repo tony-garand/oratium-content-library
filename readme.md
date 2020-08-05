@@ -1,6 +1,12 @@
 ## Local Setup
+`npm install`
+`composer install`
+`php artisan jwt:secret`
 
-After normal setup, you'll need to run `php artisan jwt:secret`# Oratium-Premium-Content-Library
+## new database
+`php artisan migrate`
+
+
 # oratium-content-library
 
 <img src="http://tonygarand.com/wp-content/uploads/2019/09/oratium-mockup.png">
