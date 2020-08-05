@@ -6,7 +6,9 @@
 create these folders under storage/framework:
 
 sessions
+
 views
+
 cache
 
 
