@@ -13,9 +13,9 @@ cache
 
 
 
-## new database
+## If you have a new database run:
 `php artisan migrate`
-
+and update the .env file to match you sql information
 
 # oratium-content-library
 
